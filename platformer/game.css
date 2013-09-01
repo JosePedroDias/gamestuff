@@ -1,0 +1,43 @@
+body {
+    margin:     0;
+    overflow:   hidden;
+}
+
+/*
+img, canvas {
+    background-color:   #FDF;
+}*/
+
+img {
+    display:    none;
+}
+
+.nnInterp {
+    /* uses nearest-neighbour interpolation */
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+}
+
+@font-face {
+    font-family: 'Silkscreen';
+    src: url('fnt/slkscr.eot');
+    src: url('fnt/slkscr.eot?#iefix')           format('embedded-opentype'),
+         url('fnt/slkscr.woff')                 format('woff'),
+         url('fnt/slkscr.ttf')                  format('truetype'),
+         url('fnt/slkscr.svg#SilkscreenNormal') format('svg');
+    font-weight: normal;
+    font-style:  normal;
+}
+
+@font-face {
+    font-family: 'uni';
+    src: url('fnt/uni0553.eot');
+    src: url('fnt/uni0553.eot?#iefix')           format('embedded-opentype'),
+         url('fnt/uni0553.woff')                 format('woff'),
+         url('fnt/uni0553.ttf')                  format('truetype');
+    font-weight: normal;
+    font-style:  normal;
+}

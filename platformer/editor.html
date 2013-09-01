@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>editor</title>
+		<link type="text/css" rel="stylesheet" href="editor.css"/>
+	</head>
+	
+	<body>
+		<!-- START OF HTML -->
+		<canvas id="c"></canvas>
+
+		<div id="ui">    
+			<h1>shapes:</h1>
+			<button id="importBtn">in</button>
+			<button id="exportBtn">out</button>
+				
+			<button id="zoomInBtn">+</button>
+			<button id="zoomOutBtn">-</button>
+			
+			grid:<input type="text" id="grid" value=""/>
+				
+			<select id="shapesView" size="10">
+				<option value="sh1">shape 1</option>
+				<option value="sh2">shape 2</option>
+			</select>
+			
+			<button id="topBtn"></button>
+			<button id="upBtn"></button>
+			<button id="downBtn"></button>
+			<button id="bottomBtn"></button>
+			
+			<h1>selected shape:</h1>
+			<button id="createBtn">create</button>
+			<button id="moveBtn" class="selected">move</button>
+			<button id="redimBtn">redim</button>
+			<button id="panBtn">pan</button><br/>
+			
+			<button id="cloneBtn">clone</button>
+			<button id="deleteBtn">delete</button>
+			
+			<div id="selectedShapeProperties"></div>
+		</div>​
+		<!--   END OF HTML -->
+		
+		<script type="text/javascript" src="editor.js"></script>
+	</body>
+</html>

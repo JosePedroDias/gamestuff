@@ -1,0 +1,21 @@
+load([
+	{"pos":[60,160],"dims":[20,30],"color":"red","behave":"player","id":"id2"},
+	{"pos":[0,339],"dims":[91.5,21.5],"color":"#373","id":"id3"},
+	{"pos":[44,224],"dims":[42,17],"color":"#888","id":"id4"},
+	{"pos":[85,212],"dims":[33.5,30.5],"color":"#888","id":"id5"},
+	{"pos":[117,202],"dims":[34,42],"color":"#888","id":"id6"},
+	{"pos":[185,182],"dims":[117,22],"color":"#333","id":"id7","behave":"conveyor","v":2},
+	{"pos":[349,337],"dims":[40,20],"color":"#FA0","behave":"spring","id":"id8","a":3},
+	{"pos":[-40,340],"dims":[40,20],"color":"#444","behave":"moving","delta":[0,-100],"duration":3000,"id":"id9"},
+	{"pos":[190,120],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id10"},
+	{"pos":[301.5,239],"dims":[40.5,21],"color":"#FA0","behave":"spring","id":"id11","a":3},
+	{"pos":[-64.75,241],"dims":[301.5,20],"color":"#373","id":"id12"},
+	{"pos":[228,337],"dims":[121,20],"color":"#373","id":"id13"},
+	{"pos":[75,386],"dims":[172,16],"color":"#373","id":"id14"},
+	{"pos":[228,357],"dims":[20,29],"color":"#373","id":"id15"},
+	{"pos":[75,360],"dims":[16.5,26.5],"color":"#373","id":"id16"},
+	{"pos":[91.5,339],"dims":[136.5,47],"color":"rgba(0,0,255,0.25)","id":"id17","behave":"ghost"},
+	{"pos":[233,119],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id18"},
+	{"pos":[268,118],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id19"},
+	{"pos":[235.5,240.5],"dims":[69,15],"color":"#77f","id":"id20","behave":"ice","v":-2}
+]);

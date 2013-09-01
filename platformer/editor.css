@@ -1,0 +1,126 @@
+body {
+	margin: 0;
+	background-color: #333;
+	overflow:hidden;
+	font-family: Helvetica, FreeSans, Arial sans-serif;
+	font-size: 12px;
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+button {
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 6px;
+	padding: 1px 3px;
+	margin:       1px 1px;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #888;
+	border-right:  1px solid #888;
+	background-color: transparent;
+}
+
+button:hover, button.selected {
+	background-color: #DDD;
+	border: 1px solid #888;
+	border-bottom: 1px solid #FFF;
+	border-right:  1px solid #FFF;
+}
+
+#topBtn, #upBtn, #downBtn, #bottomBtn {
+	width:  36px;
+	height: 18px;
+	background-position: 13px 3px;
+	background-repeat: no-repeat;
+}
+
+#topBtn {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAN0lEQVQYV2NkgID/UBobxQgSBBNoAKQJQxxdANlkFDlkDjbr4fIwBsluJMpqdN/jdCNtFOIMdwAwVQkLgcX/BgAAAABJRU5ErkJggg==);
+}
+#upBtn {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAANElEQVQYV2NkIBIwYlH3HyiGIY4uAFIEAyhyyBxkRRiKYQqxKUJRTJbVIBOIciNtFOIMfgCeUwgLpvrJbAAAAABJRU5ErkJggg==);
+}
+#downBtn {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMklEQVQYV2NkIBIwoqn7j8RHkRsECpHdhu49sPOQ3YhNMVyebM+AbAGZjG4ApgCu8AcAnlMIC2/6ysYAAAAASUVORK5CYII=);
+}
+#bottomBtn {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAMUlEQVQYV2NkIBIwoqn7j8RHkRsECpHdhu49sPOQ3YhNMVyebM+AbAGZjG4AXICgGwG/NwkL/C0i3gAAAABJRU5ErkJggg==);
+}
+
+canvas {
+	background-color: white;
+	cursor: crosshair;
+	
+	/* nearest neighbour interpolation (doesn't seem to work on webkit yet!) */
+	image-rendering: optimizeSpeed;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: -webkit-optimize-contrast;
+	image-rendering: optimize-contrast;
+	-ms-interpolation-mode: nearest-neighbor;
+}
+
+#ui {
+	text-align: center;
+	position: fixed;
+	right:  0;
+	top:    0;
+	width:  200px;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.25);
+}
+
+#ui h1 {
+	margin:0;
+	margin-top: 10px;
+	font-size: 14px;
+	text-decoration: underline;
+}
+
+#shapesView {
+	width: 180px;
+	border: 1px solid #888;
+	border-bottom: 1px solid #FFF;
+	border-right:  1px solid #FFF;
+	font-family: "Helvetica Narrow", "Arial Narrow", sans-serif;
+}
+
+[selected] {background-color: red; }
+
+#selectedShapeProperties p {
+	margin: 0;
+	text-align:left;
+}
+
+#selectedShapeProperties label {
+	font-size:   13px;
+	width:       85px;
+	margin-left: 5px;
+	font-weight: bold;
+	display:     inline-block;
+}
+
+#grid {
+	width: 30px;
+}
+
+#selectedShapeProperties input {
+	width: 90px;
+	border:        1px solid #FFF;
+	border-bottom: 1px solid #888;
+	border-right:  1px solid #888;
+	border-radius: 4px;
+	outline: none;
+}
+
+#selectedShapeProperties input:hover,
+#selectedShapeProperties input:focus {
+	border:        1px solid #888;
+	border-bottom: 1px solid #FFF;
+	border-right:  1px solid #FFF;
+}
+​

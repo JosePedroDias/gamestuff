@@ -1,0 +1,20 @@
+load([
+	{"pos":[60,160],"dims":[20,30],"color":"red","behave":"player","id":"id11"},
+	{"pos":[0,339],"dims":[91.5,21.5],"color":"#373","id":"id12"},
+	{"pos":[44,224],"dims":[42,17],"color":"#888","id":"id13"},
+	{"pos":[85,212],"dims":[33.5,30.5],"color":"#888","id":"id14"},
+	{"pos":[117,202],"dims":[34,42],"color":"#888","id":"id15"},
+	{"pos":[185,182],"dims":[117,22],"color":"#888","id":"id16"},
+	{"pos":[349,337],"dims":[40,20],"color":"#FA0","behave":"spring","acc":0.4,"id":"id17"},
+	{"pos":[-40,340],"dims":[40,20],"color":"#444","behave":"moving","delta":[-30,-100],"duration":3000,"id":"id18"},
+	{"pos":[190,120],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id19"},
+	{"pos":[301.5,239],"dims":[40.5,21],"color":"#FA0","behave":"spring","a":0.4,"id":"id22"},
+	{"pos":[0,240],"dims":[301.5,20],"color":"#373","id":"id23"},
+	{"pos":[228,337],"dims":[121,20],"color":"#373","id":"id24"},
+	{"pos":[75,386],"dims":[172,16],"color":"#373","id":"id25"},
+	{"pos":[228,357],"dims":[20,29],"color":"#373","id":"id26"},
+	{"pos":[75,360],"dims":[16.5,26.5],"color":"#373","id":"id27"},
+	{"pos":[91.5,339],"dims":[136.5,47],"color":"rgba(0,0,255,0.25)","id":"id28","behave":"ghost"},
+	{"pos":[233,119],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id29"},
+	{"pos":[268,118],"dims":[20,20],"color":"#CC0","behave":"destructible","id":"id30"}
+]);
