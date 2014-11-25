@@ -432,6 +432,19 @@
 		shapes.splice(i+1, 0, s);
 		updateShapesView();
 	});
+
+        var playing = false;
+        s$('playBtn').addEventListener('click', function () {
+            playing = !playing;
+            if (playing) {
+                s$('playIframe').src = './game.html?' + encodeURIComponent(JSON.stringify(shapes));
+                s$('playFrame').removeAttribute('hidden');
+                s$('playIframe').focus();  // Input events, please go into the iframe
+            } else {
+                s$('playIframe').src = 'about:blank';
+                s$('playFrame').setAttribute('hidden', 'hidden');
+            }
+        });
 	   
 	s$('importBtn').addEventListener('click', function() {
 		var s = prompt('JSON?');
