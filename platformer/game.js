@@ -178,11 +178,17 @@ window.load = function(o) {
 
 (function() {
     //var l = prompt('level?', 'level1.js');
-    var l = 'level3.js';
-    var scriptEl = document.createElement('script');
-    scriptEl.setAttribute('type', 'text/javascript');
-    scriptEl.setAttribute('src', l);
-    document.head.appendChild(scriptEl);
+    if (!location.search) {
+        var l = 'level3.js';
+        var scriptEl = document.createElement('script');
+        scriptEl.setAttribute('type', 'text/javascript');
+        scriptEl.setAttribute('src', l);
+        document.head.appendChild(scriptEl);
+    } else {
+        load(
+            JSON.parse(decodeURIComponent(
+                ('' + location.search).replace(/^\?/, ''))))
+    }
 })();
 
 /*

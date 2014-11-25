@@ -47,7 +47,33 @@
 		return 'id' + (uuidAux++);
 	};
 		
-		
+        // Throttling for scroll events
+        var throttle = function (func, wait) {
+            wait = wait || 0;
+            var lastCall = 0;  // Warning: This breaks on Jan 1st 1970 0:00
+            var timeout;
+            var throttled = function () {
+                var now = +new Date();
+                var timeDiff = now - lastCall;
+                if (timeDiff >= wait) {
+                    lastCall = now;
+                    return func.apply(this, [].slice.call(arguments));
+                } else {
+                    var that = this;
+                    var args = [].slice.call(arguments);
+
+                    if (timeout) {
+                        clearTimeout(timeout);
+                    }
+
+                    timeout = setTimeout(function () {
+                        timeout = null;
+                        return throttled.apply(that, args);
+                    }, wait - timeDiff);
+                }
+            };
+            return throttled;
+        }
 		
 	// cross-browser requestAnimationFrame
 	if (!window.requestAnimationFrame) {
@@ -155,11 +181,15 @@
 
 		
 	// ON FRAME
+        var paused;
+        var pause = function () { paused = true; }
+        var play = function () { paused = false; onFrame(); }
 	var onFrame = function() {
+                if (paused) { return; }
 		draw();
 		window.requestAnimationFrame(onFrame);
 	};
-	onFrame();
+	play();
 
 		
 		
@@ -387,7 +417,7 @@
 		}
 	};
 	s$('c').addEventListener('mousedown', onMouse);
-	s$('c').addEventListener('mousemove', onMouse);
+	s$('c').addEventListener('mousemove', throttle(onMouse, 100));
 	s$('c').addEventListener('mouseup',   onMouse);
 
 		
@@ -432,6 +462,21 @@
 		shapes.splice(i+1, 0, s);
 		updateShapesView();
 	});
+
+        var playing = false;
+        s$('playBtn').addEventListener('click', function () {
+            playing = !playing;
+            if (playing) {
+                pause();  // Pause the editor "game"
+                s$('playIframe').src = './game.html?' + encodeURIComponent(JSON.stringify(shapes));
+                s$('playFrame').removeAttribute('hidden');
+                s$('playIframe').focus();  // Input events, please go into the iframe
+            } else {
+                play();
+                s$('playIframe').src = 'about:blank';
+                s$('playFrame').setAttribute('hidden', 'hidden');
+            }
+        });
 	   
 	s$('importBtn').addEventListener('click', function() {
 		var s = prompt('JSON?');

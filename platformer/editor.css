@@ -123,4 +123,27 @@ canvas {
 	border-bottom: 1px solid #FFF;
 	border-right:  1px solid #FFF;
 }
+
+#playFrame {
+    background: rgba(0,0,255,0.5);
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 200px;
+    bottom: 0;
+}
+#playIframe {
+    position: fixed;
+    top: 100px;
+    right: 300px;  /* width of #ui + 100px margin */
+    width: calc(100vw - 400px);  /* screen width - 100px margin each side - width of UI */
+    height: calc(100vh - 200px);  /* screen width - 100px margin each side - width of UI */
+    border: 1px outset;
+    border-left: none;
+    border-top: none;
+    border-bottom-width: 10px;
+    background: white;
+}
+
 ​
