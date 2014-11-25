@@ -155,11 +155,15 @@
 
 		
 	// ON FRAME
+        var paused;
+        var pause = function () { paused = true; }
+        var play = function () { paused = false; onFrame(); }
 	var onFrame = function() {
+                if (paused) { return; }
 		draw();
 		window.requestAnimationFrame(onFrame);
 	};
-	onFrame();
+	play();
 
 		
 		
@@ -437,10 +441,12 @@
         s$('playBtn').addEventListener('click', function () {
             playing = !playing;
             if (playing) {
+                pause();  // Pause the editor "game"
                 s$('playIframe').src = './game.html?' + encodeURIComponent(JSON.stringify(shapes));
                 s$('playFrame').removeAttribute('hidden');
                 s$('playIframe').focus();  // Input events, please go into the iframe
             } else {
+                play();
                 s$('playIframe').src = 'about:blank';
                 s$('playFrame').setAttribute('hidden', 'hidden');
             }
